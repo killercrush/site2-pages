@@ -1,0 +1,109 @@
+
+.price-panel {
+    background-color: #ffffff;
+    padding: 26px 26px 30px;
+    margin: 42px 0;
+    @include breakpoint(tablet) {
+        
+    }
+    @include breakpoint(mobile) {
+        padding: 17px 15px 15px;
+        margin: 20px 0;
+    }    
+}
+.price-panel__container,
+.price-list__container {
+    @include breakpoint(mobile) {
+        padding: 0;
+    }
+}
+.price-panel__heading {
+    font-size: 18px;
+    color: $green;
+    font-family: "Lato";
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 22px;
+    @include breakpoint(mobile) {
+        margin: 0 0 9px;
+        font-size: 17px;
+    }    
+}
+.price-panel__text {
+    color: #3a3a3a;
+    text-shadow: 0px 0px 0px #3a3a3a;
+    font-family: "Lato";
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 20px;
+    margin: 4px 0;
+    @include breakpoint(mobile) {
+        font-size: 14px;
+        margin: 0;
+    }    
+}
+.price-panel__text span {
+    font-weight: 600;
+    text-shadow: none;
+}
+
+.project-table__head.project-table__head--price th {
+    padding: 10px 0;
+}
+.project-table__cell.project-table__cell--img {
+    width: 20.5%;
+}
+.price-table-container {
+    margin-bottom: 55px;
+    @include breakpoint(mobile) {
+        margin-bottom: 20px;
+    }    
+}
+/** 
+ * PRICE LIST
+ */
+.price-list {
+    padding: 25px 25px 25px 26%;
+    background: #fefbf5 url(../images/icon-plus-big.png) 10.5% 45% no-repeat;
+    @include breakpoint(tablet) {
+        padding: 25px 25px 25px 23%;
+        background: #fefbf5 url(../images/icon-plus-big.png) 8.5% 45% no-repeat;
+    }
+    @include breakpoint(mobile) {
+        padding: 100px 15px 15px;
+        background: #fefbf5 url(../images/icon-plus-big.png) 50% 4% no-repeat;
+    }  
+
+}
+.price-list__text {
+    color: #3a3a3a;
+    text-shadow: 0px 0px 0px #3a3a3a;
+    font-family: "Lato";
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 29px;
+    margin-top: 0;
+    @include breakpoint(tablet) {
+        font-size: 14px;
+        line-height: 25px;
+    }
+    @include breakpoint(mobile) {
+        line-height: 20px;
+    }    
+}
+.price-list__paragraph {
+    @include breakpoint(tablet) {
+        line-height: 25px;
+    }
+    @include breakpoint(mobile) {
+        line-height: 40px;
+    }    
+}
+.price-list__text span {
+    font-weight: 600;
+    text-shadow: none;
+}
+
+.project-table__title.project-table__title--lesser-margin {
+   margin: 38px 0; 
+}

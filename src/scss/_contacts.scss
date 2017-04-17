@@ -1,0 +1,247 @@
+/** 
+ * CONTACTS
+ */
+.contacts {
+    padding-top: 55px;
+    padding-bottom: 55px;
+    @include breakpoint(tablet) {
+        padding-top: 42px;
+        padding-bottom: 0;
+    }
+    @include breakpoint(mobile) {
+        padding-top: 24px;
+        padding-bottom: 0;
+    }        
+} 
+.contacts__block {
+    display: inline-block;
+    width: 33%;
+    color: #60605f;
+    font-size: 16px;
+    font-family: "Lato";
+    font-weight: 300;
+    padding-left: 40px;
+    text-shadow: 0px 0px 0px rgba(96, 96, 95, 0.6);
+    @include breakpoint(tablet) {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    @include breakpoint(mobile) {
+
+    } 
+}
+.contacts__block a {
+    color: #60605f;
+}
+.contacts__block span {
+    color: #3a3a3a;
+    font-weight: 600;
+    text-shadow: none;
+    @include breakpoint(mobile) {
+        font-size: 12px;
+    }
+}
+.contacts__block.contacts__block--address {
+    background: url(../images/icon-address.png) 0px 3px no-repeat;
+    background-size: 30px 41px;
+    @include breakpoint(tablet) {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    @include breakpoint(mobile) {
+        margin-bottom: 13px;
+    } 
+}
+.contacts__block.contacts__block--phone {
+    background: url(../images/icon-contacts-phone.png) 53px 5px no-repeat;
+    background-size: 31px 31px;
+    padding-left: 94px;
+    @include breakpoint(tablet) {
+        width: 50%;
+        padding-left: 40px;
+        background: url(../images/icon-contacts-phone.png) 0px 3px no-repeat;
+        background-size: 31px 31px;
+    }
+    @include breakpoint(mobile) {
+        width: 100%;
+        margin-bottom: 20px;
+    }        
+}
+.contacts__block.contacts__block--schedule {
+    background: url(../images/icon-clock.png) 76px 6px no-repeat;
+    background-size: 30px 30px;
+    padding-left: 120px;
+    @include breakpoint(tablet) {
+        width: 50%;
+        background: url(../images/icon-clock.png) 40px 6px no-repeat;
+        background-size: 30px 30px;
+        padding-left: 86px;        
+    }
+    @include breakpoint(mobile) {
+        width: 100%;
+        padding-left: 40px;
+        background: url(../images/icon-clock.png) 0px 3px no-repeat;
+        background-size: 30px 30px;
+    } 
+}
+/** 
+ * COSTING FORM
+ */
+.costing-form__bg {
+    @include breakpoint(mobile) {
+        background-color: #fefbf5;
+        margin-top: 20px; 
+    }
+}
+.costing-form__container {
+    background-color: #fefbf5;
+    padding: 35px 3% 30px;
+    @include breakpoint(tablet) {
+        padding: 30px 3%;
+        margin-top: 28px;
+    }    
+    @include breakpoint(mobile) {
+        padding: 0 0 30px;
+        margin-top: 15px;
+    }    
+}
+.costing-form__heading {
+    text-align: center;
+    margin: 0 0 34px;
+    font-size: 24px;
+    font-family: "Lato";
+    font-weight: 700;
+    color: #f26c4f;
+    @include breakpoint(mobile) {
+        font-size: 18px;
+        margin: 0 0 13px;
+    }    
+}
+.costing-form {
+    text-align: right;
+    @include breakpoint(mobile) {
+        text-align: center;
+    }    
+}
+.costing-form__input,
+.costing-form__textarea {
+    padding: 13px 16px 10px;
+    font-family: "Lato";
+    font-size: 18px;
+    font-weight: 300;
+    color: #3a3a3a;
+    width: 330 / 1080 * 100%;
+    margin-right: 45 / 1080 * 100%;
+    border: 1px solid #e5e2dc;
+    outline: 0;
+    @include breakpoint(mobile) {
+        width: 100%;
+        margin: 0 0 10px;
+    }        
+}
+.costing-form__input.costing-form__input--required:invalid {
+    background: #fff url(../images/placeholder-star.png) 111px 17px no-repeat;
+    background-size: 5px 5px;
+}
+.costing-form__input.costing-form__input--required2:invalid {
+    background: #fff url(../images/placeholder-star.png) 126px 17px no-repeat;
+    background-size: 5px 5px;
+}
+.costing-form__input:nth-of-type(3) {
+    margin-right: 0;
+}
+.costing-form__textarea {
+    width: 100%;
+    margin: 30px 0 15px;
+    min-height: 118px;
+    @include breakpoint(mobile) {
+        margin: 0 0 10px;
+    }         
+}
+.costing-form__footnote {
+    color: #cabba5;
+    font-family: "Lato";
+    font-size: 16px;
+    font-weight: 300;
+    font-style: italic;
+    margin-top: 14px;
+    display: block;
+    float: left;
+    @include breakpoint(tablet) {
+        float: none;
+        text-align: left;
+        margin-top: 0px;
+    }
+    @include breakpoint(mobile) {
+        margin-bottom: 11px;
+        text-align: center;
+    }             
+}
+.costing-form__file {
+    display: none;
+}
+.costing-form__btn-attach {
+    background: url(../images/icon-clip.png) 0px 0px no-repeat;
+    background-size: 24px 24px;    
+    color: #cf830c;
+    font-family: "Lato";
+    font-size: 18px;
+    font-weight: 600;
+    font-style: italic;
+    margin-right: 63px;
+    padding: 5px 0px 5px 33px;
+    position: relative;
+    top: -6px;
+    cursor: pointer;
+    @include breakpoint(tablet) {
+        float: left;
+        top: 3px;
+    }
+    @include breakpoint(mobile) {
+        float: none;
+        margin-right: 0;
+        margin-bottom: 13px;
+        display: inline-block;
+    } 
+}
+.costing-form__btn-attach:after {
+    content: "...................................";
+    color: #cf830c;
+    font-family: "Lato";
+    font-size: 18px;
+    font-weight: 600;
+    font-style: italic;
+    position: absolute;
+    bottom: -3px;
+    left: 34px;    
+}
+
+.btn-gradient.btn-gradient--costing-form {
+    text-transform: uppercase;
+    font-size: 20px;
+    height: 54px;
+    padding: 6px 51px 0;
+    max-width: 100%;
+    @include breakpoint(tablet) {
+        max-width: 100%;
+        margin-top: -16px;
+        padding: 6px 53px 0;
+    }
+    @include breakpoint(mobile) {        
+        padding: 6px 67px 0;
+        height: 46px;
+        font-size: 16px;
+    }     
+}
+.address-map-container {
+    padding-top: 50px;
+    padding-bottom: 60px;
+    @include breakpoint(tablet) {
+        padding-top: 40px;
+        padding-bottom: 50px;
+    }
+    @include breakpoint(mobile) {        
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }    
+}

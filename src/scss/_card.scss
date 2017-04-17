@@ -1,0 +1,398 @@
+/** 
+ * CARD
+ */
+.tabs__bg {
+    background: url(../images/projects-bg.jpg) 0 90px;
+    background-repeat-x: repeat;
+    background-repeat-y: no-repeat;
+    @include breakpoint(tablet) {
+        background-position-y: 82px;
+    }    
+}
+.tabs__container {
+    padding: 0;
+}
+.tabs {    
+    text-align: center;
+    white-space: nowrap;
+    display: inline-block;
+    padding: 0 5%;    
+}
+.tabs__wrapper {
+    text-align: center;
+    margin-top: 50px;
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: 9px;
+    //height: 40px;
+    //position: relative;
+    @include breakpoint(tablet) {
+        margin-top: 44px;
+    }
+}
+.tabs__control {
+    background-color: #eff5e5;
+    font-size: 16px;
+    color: $green;
+    font-family: "Lato";
+    font-weight: 600;
+    // padding: 9px (25 / 938 * 100%);
+    // margin-right: 10 / 938 * 100%;
+    padding: 9px 20px;
+    margin-right: 7px;    
+    display: inline-block;
+    cursor: pointer;
+    @include breakpoint(tablet) {
+        font-size: 14px;
+        padding: 9px 20px;
+    }
+    @include breakpoint(mobile) {
+
+    }       
+}
+.tabs__control:last-of-type {
+    margin-right: 0;
+}
+.tabs__control.tabs__control--active {
+    background-color: $green;
+    color: #ffffff;
+    position: relative;
+}
+.tabs__control.tabs__control--active:after {
+    content: "";
+    border-top: 9px solid #65a303;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    position: absolute;
+    left: 50%;
+    margin-left: -18px;
+    bottom: -9px;
+}
+.project-card__bg {
+    background: url(../images/projects-bg.jpg) 0 0 repeat;
+    padding: 51px 0 60px;
+    @include breakpoint(tablet) {
+        padding: 41px 0 40px;
+    }
+    @include breakpoint(mobile) {
+        padding: 11px 0 0;
+    }     
+}
+.project-card {
+    background-color: #ffffff;
+    padding-bottom: 22px;
+    @include breakpoint(mobile) {
+        background: none;
+        padding-bottom: 20px;
+    }    
+}
+.project-card__text-container {
+    @include breakpoint(mobile) {
+        background-color: #ffffff;
+    }    
+}
+.project-card__title {
+    color: #5c9206;
+    font-size: 18px;
+    font-family: "Lato";
+    font-weight: 700;
+    padding-left: 25px;
+    text-transform: uppercase;
+    margin: 28px 0 -21px;
+    @include breakpoint(tablet) {        
+        margin: 27px 0 -17px;
+    }
+    @include breakpoint(mobile) {
+        margin: 17px 0 -17px;
+        padding-left: 0;
+    }
+}
+.project-card__text {
+    color: #3a3a3a;
+    font-size: 16px;
+    font-family: "Lato";
+    font-weight: 300;
+    padding: 0 5px 0 26px;
+    text-shadow: 0px 0px 0px #3a3a3a;
+    margin: 20px 0;
+    line-height: 20px;
+    @include breakpoint(mobile) {
+        font-size: 14px;
+        padding: 0;
+    }           
+}
+.project-card__video-container {
+    @include breakpoint(mobile) {
+        margin-bottom: 20px;
+    }
+}
+.project-card__text--before-img {
+    @include breakpoint(mobile) {
+        margin-top: 5px;
+        margin-bottom: 16px;
+    }
+}
+.project-card__image-container {
+    @include breakpoint(tablet) {
+        padding: 0 15px;
+    }
+    @include breakpoint(mobile) {
+        padding: 0;
+    }
+}
+.project-card__image {
+    display: block;
+    margin: 36px auto 17px;
+    max-width: 100%;
+    @include breakpoint(tablet) {
+        margin: -13px auto 21px;
+    }
+    @include breakpoint(mobile) {
+        margin: 0px auto 21px;
+    }     
+}
+/** 
+ * TABLE
+ */
+.project-table__container {
+    padding-bottom: 65px;
+    @include breakpoint(mobile) {
+        padding-bottom: 15px;
+    }    
+}
+.project-table__title {
+    text-align: center;
+    font-size: 20px;
+    font-family: "Lato";
+    font-weight: 400;
+    color: $green;
+    margin: 55px 0 40px;
+    @include breakpoint(tablet) {
+        margin: 44px 0 27px;
+    }
+    @include breakpoint(mobile) {
+        margin: 17px 0 19px;
+        font-size: 18px;
+        padding: 0 5px;
+        line-height: 20px;
+    }
+}
+.scroller-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+.scroller {
+    min-width: 720px;
+}
+.iScrollHorizontalScrollbar {
+    background-color: #e1e7d9;
+    position: relative;
+    height: 8px;
+    top: -1px;
+    overflow: visible !important;
+    margin: 20px 0 2px;
+    display: none;
+    @include breakpoint(mobile) {
+        display: block;
+    }    
+}
+
+.iScrollIndicator {
+    box-sizing: border-box;
+    position: absolute;
+    background: $green;
+    height: 11px;
+    top: -1px;
+}
+.project-table {
+    width: 100%;
+    
+}
+.project-table__head {
+    background-color: #ab9f8b;
+    font-size: 16px;
+    font-family: "Lato";
+    font-weight: 700;
+    color: #ffffff;
+    @include breakpoint(mobile) {
+        font-size: 14px;
+    }       
+}
+.project-table__head span {
+    font-weight: 300;
+}
+.project-table__body {
+    background-color: #fefbf5;
+    font-size: 16px;
+    font-family: "Lato";
+    font-weight: 300;
+    color: #4f4f4f;
+    text-shadow: 0px 0px 1px rgba(79, 79, 79, 0.5);
+}
+.project-table__cell {
+    text-align: center;
+    border: 1px solid #e5e2dc;
+    border-bottom: none;
+    padding: 14px 0;    
+}
+.project-table__cell:first-child {
+    border-left: none;
+}
+.project-table__cell:last-child {
+    border-right: none;
+}
+.project-table__cell.project-table__cell--head {
+    border: none;
+    padding: 13px 0;       
+}
+.project-table__cell.project-table__cell--first {
+    text-align: left;
+    padding-left: 20px;
+}
+.project-table__cell.project-table__cell--w21 {
+    width: 20.5%;
+}
+.project-table__cell.project-table__cell--w25 {
+    width: 25%;
+}
+/** 
+ * PRODUCTION STAGES
+ */
+.production-stages-bg {
+    background: url(../images/projects-bg.jpg) 0 0 repeat;
+}
+.heading.heading--production-stages {
+    margin: 50px auto 35px;
+    color: $green;
+    &:before,
+    &:after {
+        border-top: 1px solid $green;
+        width: 20%;
+    }    
+}
+.carousel.carousel--production-stages {
+    padding-bottom: 55px;
+    @include breakpoint(mobile) {
+        padding-bottom: 35px;
+    }    
+}
+/** 
+ * PLUSES
+ */
+.btn-gradient__container.btn-gradient__container--production-stages {
+    margin-bottom: 120 - 56px;
+    @include breakpoint(tablet) {
+        margin-bottom: 23px;
+    }
+    @include breakpoint(mobile) {
+
+    }
+}
+.btn-gradient.btn-gradient--production-stages {
+    text-transform: uppercase;
+    font-size: 20px;
+    padding: 15px 26px 0;
+    height: 56px;
+    position: relative;
+    top: -28px;
+    @include breakpoint(mobile) {
+        font-size: 16px;
+        padding: 12px 22px 0;
+        height: 47px;
+    }
+} 
+.pluses {
+    border: 3px solid $green;
+    text-align: center;
+    margin-bottom: 99px;
+    min-height: 501px;
+    @include breakpoint(tablet) {
+        min-height: 495px;
+        margin-bottom: 49px;
+    }
+    @include breakpoint(mobile) {
+        margin-bottom: 32px;
+    }
+}
+.pluses__extra-line {
+    display: none;
+    @include breakpoint(tablet) {
+        display: inline;
+    }
+    @include breakpoint(mobile) {
+        display: none;
+    }   
+}
+.pluses__list {
+    text-align: left;
+    padding-left: 30px;  
+    list-style: none;
+    margin: 0 0 36px;
+    @include breakpoint(tablet) {
+        margin: 0 0 13px;
+    }
+    @include breakpoint(mobile) {
+        padding-left: 9px;
+        margin: 0 0 8px;
+    }  
+}
+.pluses__list.pluses__list--lesser-margin {
+    margin: 0 0 14px;
+}
+.pluses__heading {
+    font-size: 30px;
+    font-family: "Lato";
+    font-weight: 500;    
+    color: #456a0b;
+    display: inline-block;
+    position: relative;
+    top: -24px;
+    margin: 0;
+    padding: 0 (30 / 555 * 100%);
+    background-color: #ffffff;
+    @include breakpoint(tablet) {
+        font-size: 24px;
+        top: -19px;
+        margin-bottom: -13px;
+    }
+    @include breakpoint(mobile) {
+        font-size: 20px;    
+    }    
+}
+.pluses__item {
+    line-height: normal;
+    font-size: 18px;
+    font-family: "Lato";
+    font-weight: 700;
+    color: #65a303;
+    padding: 13px 45px 22px 36px;
+    background: url(../images/icon-plus.png) no-repeat 0 13px;
+    @include breakpoint(tablet) {
+        font-size: 16px;
+        padding: 13px 40px 22px 36px;
+    }
+    @include breakpoint(mobile) {
+        padding: 12px 5px 31px 36px;
+    }
+}
+.pluses__item.pluses__item--lesser-pading {
+    padding: 0px 45px 22px 36px;
+    background: url(../images/icon-plus.png) no-repeat 0 0px;
+    @include breakpoint(tablet) {
+        padding: 13px 40px 22px 36px;
+        background: url(../images/icon-plus.png) no-repeat 0 13px;
+    }
+    @include breakpoint(mobile) {
+        padding: 12px 5px 31px 36px;
+    }     
+}
+.pluses__item span {
+    font-size: 16px;
+    font-family: "Lato";
+    font-weight: 400;
+    font-style: italic;   
+    color: #4f4f4f;
+    @include breakpoint(tablet) {
+        font-size: 14px;
+    }
+}

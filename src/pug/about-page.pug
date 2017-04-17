@@ -1,0 +1,72 @@
+extends ./includes/simple-layout.pug
+
+block content
+  +breadcrumbs("О компании")
+  .container
+    .row
+      .col-xs-12.heading__container
+        h2.heading.heading--block-traditions традиции деревянного 
+          br.only-mobile 
+          | домостроения
+    .row
+      .col-md-6.col-md-push-6.col-xs-12.block-traditions__img-container
+        img.block-traditions__img(src="images/traditions-image.jpg")
+      .col-md-6.col-md-pull-6.col-xs-12.block-traditions
+        p.block-traditions__text.block-traditions__text--no-indent Дом это мечта, это реальная возможность создать свой мир, живущий по законам своего создателя, то есть вас. Думаю, строительство собственного дома и есть один из основных постулатов жизненного пути человека.
+        p.block-traditions__text.block-traditions__text--question Что ты сделал в своей жизни?
+        p.block-traditions__text - Я построил свой дом, мой мир, в котором живет моя семья.
+        p.block-traditions__text.block-traditions__text--question Как мы понимаем свой дом или как мы его представляем?
+        p.block-traditions__text - Уютный, добротный, надежный, дом крепость, красивый дом — основные ассоциации, возникающие при формировании понятий о своем доме.
+        p.block-traditions__text Всё остальное формируется вашим характером, культурой, традициями в семье, и вашим образом жизни.
+        span.block-traditions__who Генеральный директор компании Артель «Вятская Усадьба»
+        br
+        span.block-traditions__name Ершов Александр Андреевич
+  .block-about__bg
+    .container
+        .row
+          .col-xs-12.heading__container
+            h2.heading.heading--block-about Артель «Вятская Усадьба»
+        .row
+          .col-md-5.col-xs-12.block-about__img
+          .col-md-7.col-xs-12.block-about__container
+            .block-about
+              h4.block-about__heading Артель «Вятская Усадьба»
+              p.block-about__text Компания, выполняющая проектирование и строительство домов из оцилиндрованного и клееного бруса, а так же из рубленного бревна. Мы возводим экологически чистые деревянные дома, коттеджи, бани, хозяйственные постройки, церкви и малые архитектурные формы.
+              h4.block-about__heading Специалисты
+              p.block-about__text В штате компании заняты бригады квалифицированных монтажников из Кировской области, готовых выехать в любую точку России.
+              h4.block-about__heading Материал
+              p.block-about__text Компания использует в строительстве лес исключительно с севера Кировской области. Бревна заготавливаются лишь в зимний период — для обеспечения естественной сушки, благотворно влияющей на качество строительного материала.
+              h4.block-about__heading Опыт
+              p.block-about__text За годы работы построены десятки деревянных домов различной этажности, по типовым и эксклюзивным проектам.
+              p.block-about__text В том числе среди завершенных проектов — храм в г. Ростов-на-Дону.
+  .container
+    .row
+      .col-xs-12.heading__container
+        h2.heading.heading--block-temple проект храма в 
+          br.only-mobile 
+          | г. Ростов-на-Дону
+    .row
+      .col-md-6.col-md-push-6.col-xs-12
+        .embed-responsive.embed-responsive-16by9
+          iframe(src="https://www.youtube.com/embed/jOY3gVV_KRE" frameborder="0" allowfullscreen)
+      .col-md-6.col-md-pull-6.col-xs-12
+        p.block-temple__text Компанией артель «Вятская Усадьба» в 2012 году был подготовлен проект и возведен храм св. Александра Невского в г. Ростов-на-Дону.
+        p.block-temple__text Строительство выполнено в сжатые сроки силами бригады опытных монтажников компании.
+        p.block-temple__text.block-temple__text--bold Оно происходило в несколько этапов:
+        p.block-temple__text.block-temple__text--list-item начало лета 2012 г. — закладка фундамента, доставка леса из Кировской области;
+        p.block-temple__text.block-temple__text--list-item август 2012 г. — началось возведение сруба площадью 65 квадратных метров;
+        p.block-temple__text.block-temple__text--list-item начало сентября — за 30 дней завершено строительство сруба, начато возведение колокольни;
+        p.block-temple__text.block-temple__text--list-item середина сентября — окончание строительства колокольни и установка колоколов;
+        p.block-temple__text.block-temple__text--list-item октябрь 2012 г. — козведение куполов, сдача объекта.
+    hr.divider.divider--block-temple
+    .row
+      .col-xs-12
+        p.block-temple__text В начале ноября в храме прошли первые богослужения. Для строительства использована северная сосна зимней рубки — прочный, долговечный материал, обеспечивающий тепло и особую атмосферу внутри здания. При возведении храма монтажники наглядно продемонстрировали преимущества традиционного деревянного строительства.
+    .row
+      .col-xs-12
+        .carousel.carousel--block-temple.owl-carousel
+          +carouselItem("images/work1.jpg")
+          +carouselItem("images/work2.jpg")
+          +carouselItem("images/work3.jpg")
+          +carouselItem("images/work4.jpg")
+          +carouselItem("images/work1.jpg")

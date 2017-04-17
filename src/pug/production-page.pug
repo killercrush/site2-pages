@@ -1,0 +1,161 @@
+extends ./includes/simple-layout.pug
+
+mixin productionCard(id, vis)
+  - var style = vis ? "display: block" : "display: none";
+  .project-card(id=id style=style)
+    .row
+      .col-xs-12.col-md-6.col-md-push-6.project-card__video-container
+        .embed-responsive.embed-responsive-16by9
+          iframe(src="https://www.youtube.com/embed/jOY3gVV_KRE" frameborder="0" allowfullscreen)      
+      .col-xs-12.col-md-6.col-md-pull-6.project-card__text-container
+        h3.project-card__title Производство
+        p.project-card__text Производственная компания «Строй-элемент» — это зарекомендовавшее себя предприятие, основанное в 2001 году.
+        p.project-card__text Основная продукции компании - это материалы для деревянного домостроения. Мы комплектуем деревянный дом всем необходимым материалом. Тем самым он приходит на место сборки как конструктор - "LEGO" который нужно только собрать по инструкции.
+          br
+          | Деревянные дома различаются по внешнему виду и техническим параметрам, но зато сторят их по одной общей схеме: бревна укладывают друг на друга в горизонтальном направлении, а по углам их связывают специальными врубками - своебразными бревенчатыми замками. Так и получаются самонесущие деревянные стены.
+    .row
+      .col-xs-12.project-card__text-container
+        p.project-card__text Оцилиндрованное бревно, профилированный и клееный брус - тенологический материал, требующий минимум ручного труда при строительства дома.
+          br
+          | При промышленном изготовлении так называемого "промаркированного конструктора" из оцилиндрованного бревна, профилированного или клееного бруса процесс возведения стен настолько облегчается, что его может выполнить человек, имеющий минимальные плотницкие навыки.
+mixin timberDesc(name, imgArr, data, isSmall)
+  - 
+    if (isSmall) {
+      var className = "timber-images__img-container timber-images__img-container--smaller";
+    } else {
+      var className = "timber-images__img-container";
+    }
+    if (imgArr.length == 3) {
+      var mod = " timber-images--three-items";
+    } else {
+      var mod = "";
+    }
+  .row
+    div(class="col-md-6 col-xs-12 timber-images" + mod)
+      h4.timber-images__name= name
+      each item in imgArr
+        div(class=className)
+          img.timber-images__img(src=item.src)
+          span.timber-images__img-desc= item.desc
+        span.hide-mobile &nbsp;
+      span.stretch
+    .col-md-6.col-xs-12.timber-desc
+      .timber-desc__parameters
+        .timber-desc__param-container
+          span.timber-desc__param-name Цена от: 
+          span.timber-desc__param-value= data.price
+        .timber-desc__param-container.timber-desc__param-container--second
+          span.timber-desc__param-name Материал: 
+          span.timber-desc__param-value Сосна, ель
+        .timber-desc__param-container
+          span.timber-desc__param-name Сечение: 
+          span.timber-desc__param-value= data.size
+        .timber-desc__param-container.timber-desc__param-container--second
+          span.timber-desc__param-name Влажность: 
+          span.timber-desc__param-value= data.humidity
+      p.timber-desc__text= data.text
+  hr.divider.divider--timber
+
+mixin _timberDesc(name, imgArr, data)
+  .row
+    .col-md-6.col-xs-12.timber-images
+      h4.timber-images__name= name
+      .timber-images__container
+        .timber-images__row
+          each item in imgArr
+            .timber-images__cell
+              img.timber-images__img(src=item.src)
+        .timber-images__row
+          each item in imgArr
+            .timber-images__cell
+              span.timber-images__img-desc=item.desc
+    .col-md-6.col-xs-12.timber-desc
+      .timber-desc__parameters
+        .timber-desc__param-container
+          span.timber-desc__param-name Цена от: 
+          span.timber-desc__param-value= data.price
+        .timber-desc__param-container.timber-desc__param-container--second
+          span.timber-desc__param-name Материал: 
+          span.timber-desc__param-value Сосна, ель
+        .timber-desc__param-container
+          span.timber-desc__param-name Сечение: 
+          span.timber-desc__param-value= data.size
+        .timber-desc__param-container.timber-desc__param-container--second
+          span.timber-desc__param-name Влажность: 
+          span.timber-desc__param-value= data.humidity
+      p.timber-desc__text= data.text
+  hr.divider.divider--timber
+
+block content
+  -
+    var timber1 = {};
+    timber1.images = [
+      {src: "images/prod-1-1.png", desc: "95*145"},
+      {src: "images/prod-1-2.png", desc: "145*145"},
+      {src: "images/prod-1-3.png", desc: "170*145"},
+      {src: "images/prod-1-4.png", desc: "195*145"}
+    ];
+    timber1.data = {};
+    timber1.data.price = "7 500 руб./м³";
+    timber1.data.humidity = "17-21%";
+    timber1.data.size = "95-195 мм";
+    timber1.data.text = "Профилированный брус имеет сложное сечение, в котором есть посадочная головка, утеплительные пазы, шипы, плотно прижимающие межвенцовый утеплитель. Срубы из профилированного бруса не нуждаются в конопатке, а расход межвенцового утеплителя минимален.";
+    var timber2 = {};
+    timber2.images = [
+      {src: "images/prod-2-1.png", desc: "95*145"},
+      {src: "images/prod-2-2.png", desc: "145*145"},
+      {src: "images/prod-2-3.png", desc: "195*145"}
+    ];
+    timber2.data = {};
+    timber2.data.price = "16 000 руб./м³";
+    timber2.data.humidity = "12-18%";
+    timber2.data.size = "95-195 мм";
+    timber2.data.text = "Клееный брус - материал, совершивший революцию в деревянном домостроении. Клееный брус не имеет недостатков, характерных для массивных цельных бревен и бруса естественной влажности.Дом из клееного бруса можно построить в течение одного сезона.";
+    var timber3 = {};
+    timber3.images = [
+      {src: "images/prod-3-1.png", desc: "12,5*88"},
+      {src: "images/prod-3-2.png", desc: "36*120"},
+      {src: "images/prod-3-3.png", desc: "19*86"},
+      {src: "images/prod-3-4.png", desc: "36*130"}
+    ];
+    timber3.data = {};
+    timber3.data.price = "6 500 руб./м³";
+    timber3.data.humidity = "8-12%";
+    timber3.data.size = "12,5-135 мм";
+    timber3.data.text = "Строганные погонажные изделия являются единственным экологически чистым отделочным материалом. Несмотря на строительство из нестроганного бруса или каркасного дома, за счет современной отделки он выглядит красиво и стильно. В то же время относительно невыской стоимости используемых строительных материалов делает его одним из самых доступных.";
+    var timber4 = {};
+    timber4.images = [
+      {src: "images/prod-4-1.png", desc: "40*40"},
+      {src: "images/prod-4-2.png", desc: "150*25"},
+      {src: "images/prod-4-3.png", desc: "200*50"},
+      {src: "images/prod-4-4.png", desc: "200*100"}
+    ];
+    timber4.data = {};
+    timber4.data.price = "3 800 руб./м³";
+    timber4.data.humidity = "20-80%";
+    timber4.data.size = "40-200 мм";
+    timber4.data.text = "Обрезной материал это основа для любого деревянного домостроения. Он необходим от начала и до конца. От деревянной опалубки для заливи фундамента, до обрешетки кровли перед укладкой металлочерепицы. Изготовление его из хвойных пород северной древесины дает большое переимущество в сроке службы при тяжелых климатических условиях.";
+  +breadcrumbs("Производство")
+  .tabs__bg
+    .container
+      .row
+        .col-xs-12.tabs__container
+          .tabs__wrapper
+            .tabs
+              span.tabs__control(data-toggle="tab1") Оцилиндрованное бревно
+              span.tabs__control.tabs__control--active(data-toggle="tab2") Профилированный брус
+              span.tabs__control(data-toggle="tab3") Клееный брус
+              span.tabs__control(data-toggle="tab4") Рубленное вручную бревно
+  .project-card__bg
+    .container
+      .row
+        .col-xs-12
+          +productionCard("tab1")
+          +productionCard("tab2", true)
+          +productionCard("tab3")
+          +productionCard("tab4")
+  .container
+    +timberDesc("ПРОФИЛИРОВАННЫЙ БРУС", timber1.images, timber1.data)
+    +timberDesc("КЛЕЕНЫЙ БРУС", timber2.images, timber2.data)
+    +timberDesc("ВАГОНКА, ПОЛ, ИМИТАЦИЯ, БЛОК-ХАУС", timber3.images, timber3.data, true)
+    +timberDesc("ПИЛОМАТЕРИАЛ", timber4.images, timber4.data)

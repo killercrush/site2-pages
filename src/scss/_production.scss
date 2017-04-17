@@ -1,0 +1,181 @@
+/** 
+ * TIMBER DESCRIPTION
+ */
+.timber-images {
+    padding: 24px 28px 0;
+    text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+    @include breakpoint(mobile) {
+        padding: 11px 15px 0;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }    
+}
+.timber-images.timber-images--three-items .timber-images__img-container {
+    @include breakpoint(mobile) {
+        flex: 0 1 auto;
+    }    
+}  
+.timber-images__name {
+    font-size: 20px;
+    color: $green;
+    font-family: "Lato";
+    font-weight: 400;
+    text-decoration: underline;
+    margin-bottom: 25px;
+    margin-left: -15px;
+    @include breakpoint(tablet) {    
+        margin-top: 7px;
+    }
+    @include breakpoint(mobile) {
+        font-size: 18px;
+        margin-left: 0;
+        text-align: center;
+        flex: 0 1 100%;
+        margin-bottom: 0;
+    }
+}
+.timber-images__img-container {
+    vertical-align: middle;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    text-align: center;
+    position: relative;
+    height: 125px;
+    line-height: 125px;
+    @include breakpoint(tablet) {
+        max-width: 25%;
+    } 
+    @include breakpoint(smtablet) {
+        max-width: none;
+    }
+    @include breakpoint(mobile) {
+        flex: 0 1 50%;
+    }
+}
+.timber-images__img-container.timber-images__img-container--smaller {
+    height: 70px;
+    line-height: 70px;
+    margin-top: 29px;
+    @include breakpoint(tablet) {
+        height: 53px;
+        line-height: 53px;
+        margin-top: 13px;
+    }
+}
+.timber-images__img {
+    display: inline-block;
+    max-width: 100%;
+}
+// .timber-images__container {
+//     display: table;
+//     width: 100%;
+//     text-align: center;
+// }
+// .timber-images__row {
+//     display: table-row;
+// }
+// .timber-images__cell {
+//     display: table-cell;
+//     vertical-align: middle;
+// }
+.timber-images__cell:first-of-type {
+    text-align: left;
+}
+.timber-images__cell:last-of-type {
+    text-align: right;
+}
+.stretch {
+    width: 100%;
+    display: inline-block;    
+}
+.timber-images__img-desc {
+    font-size: 16px;
+    color: #4f4f4f;
+    font-family: "Lato";
+    font-weight: 400;
+    margin-top: 12px;
+    display: inline-block;
+    position: absolute;
+    width: 63px;
+    text-align: center;
+    left: 50%;
+    margin-left: -32px;
+    bottom: -14px;
+    line-height: normal;   
+}
+.timber-desc {
+    padding-top: 60px;
+    @include breakpoint(tablet) {
+        padding-top: 32px;
+    }
+    @include breakpoint(mobile) {
+        padding: 50px 0 0;
+    }     
+}
+.timber-desc__parameters {
+    background-color: #ab9f8b;
+    padding: 21px 21px 9px;
+    @include breakpoint(mobile) {
+        padding: 14px 15px;
+    }     
+}
+.timber-desc__param-container {
+    display: inline-block;
+    width: 50%;
+    padding-bottom: 8px;
+    @include breakpoint(mobile) {
+        padding: 0;
+    }    
+}
+.timber-desc__param-container--second {
+    padding-left: 15px;
+}
+.timber-desc__param-name {
+    font-size: 16px;
+    color: #ffffff;
+    font-family: "Lato";
+    font-weight: 500;
+    padding-bottom: 15px;
+    @include breakpoint(mobile) {
+        font-size: 12px;
+    }    
+}
+.timber-desc__param-value {
+    font-size: 16px;
+    color: #ffffff;
+    font-family: "Lato";
+    font-weight: 700;
+    @include breakpoint(mobile) {
+        font-size: 12px;
+    }    
+}
+.timber-desc__text {
+    font-size: 16px;
+    color: #4f4f4f;
+    font-family: "Lato";
+    font-weight: 300;
+    font-style: italic;
+    line-height: 20px;
+    padding-left: 20px;
+    padding-right: 10px;
+    @include breakpoint(mobile) {
+        padding: 0 15px 0;
+    }    
+}
+.divider.divider--timber {
+    border-top: 1px solid #e5e2dc;
+    margin-top: 67px;
+    margin-bottom: 0px;
+    @include breakpoint(tablet) {
+        margin-top: 37px;
+    }    
+    @include breakpoint(mobile) {
+        margin-top: 0;
+        margin-left: -15px;
+        margin-right: -15px;
+    }    
+}

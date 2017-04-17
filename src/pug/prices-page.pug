@@ -1,0 +1,234 @@
+extends ./includes/simple-layout.pug
+
+mixin priceBlock(id, vis)
+  - var style = vis ? "display: block" : "display: none";
+  .price-panel(id=id style=style)
+    h4.price-panel__heading Цены на профилированный брус в Кирове от 01.03.2016г
+    p.price-panel__text
+      span Производство профилированного бруса 
+      | осуществляется на станке марки «Winner Blazer» - четырехсторонний станок Тайваньского производства.
+    p.price-panel__text
+      span Нарезка чашек 
+      | осуществляется на двух станках: марки «Стин» - производство г.Киров и станок марки «Blue Steel» - Тайваньского производства.
+
+block content
+  +breadcrumbs("Цены")
+  .tabs__bg
+    .container
+      .row
+        .col-xs-12.tabs__container
+          .tabs__wrapper
+            .tabs
+              span.tabs__control(data-toggle="tab1") Оцилиндрованное бревно
+              span.tabs__control.tabs__control--active(data-toggle="tab2") Профилированный брус
+              span.tabs__control(data-toggle="tab3") Клееный брус
+              span.tabs__control(data-toggle="tab4") Строительство
+              span.tabs__control(data-toggle="tab5") Доставка
+  .projects__bg
+    .container
+      .row
+        .col-xs-12.price-panel__container
+          +priceBlock("tab1")
+          +priceBlock("tab2", true)
+          +priceBlock("tab3")
+          +priceBlock("tab4")
+          +priceBlock("tab5")
+  .container.price-table-container
+    .row
+      .col-xs-12
+        h2.project-table__title ПРОФИЛИРОВАННЫЙ БРУС С ФИНСКОМ И НЕМЕЦКИМ ПРОФИЛЕМ (СОСНА,ЕЛЬ)
+        .scroller-wrapper
+          .scroller        
+            table.project-table
+              thead.project-table__head.project-table__head--price
+                tr.project-table__row.project-table__row--price-tr-1
+                  th.project-table__cell(rowspan=2) Профиль
+                  th.project-table__cell(colspan=2) 
+                    | Сечение
+                    span ,мм
+                  th.project-table__cell(colspan=2) 
+                    | Естеств. влажность
+                    br
+                    | стоимость, за м3, 
+                    span руб
+                  th.project-table__cell(colspan=2) 
+                    | Камерная сушка
+                    br
+                    | стоимость, за м3, 
+                    span руб
+                tr.project-table__row
+                  th.project-table__cell
+                    span Высота,
+                    | D, мм
+                  th.project-table__cell
+                    span Ширина,
+                    | H, мм
+                  th.project-table__cell
+                    span Погонаж
+                  th.project-table__cell
+                    span Под проект
+                  th.project-table__cell
+                    span Погонаж
+                  th.project-table__cell
+                    span Под проект
+              tbody.project-table__body
+                tr.project-table__row
+                  td.project-table__cell.project-table__cell--img(rowspan=6)
+                    img.project-table__img(src="images/measurements2.png")
+                  td.project-table__cell 130
+                  td.project-table__cell 130
+                  td.project-table__cell 13500
+                  td.project-table__cell 13500
+                  td.project-table__cell 13500
+                  td.project-table__cell 13500
+                tr.project-table__row
+                  td.project-table__cell(rowspan=5) 145
+                  td.project-table__cell 90
+                  td.project-table__cell 13000
+                  td.project-table__cell 13000
+                  td.project-table__cell 13000
+                  td.project-table__cell 13000
+                tr.project-table__row
+                  td.project-table__cell 145
+                  td.project-table__cell 13500
+                  td.project-table__cell 13500
+                  td.project-table__cell 13500
+                  td.project-table__cell 13500
+                tr.project-table__row
+                  td.project-table__cell 175
+                  td.project-table__cell 14000
+                  td.project-table__cell 14000
+                  td.project-table__cell 14000
+                  td.project-table__cell 14000
+                tr.project-table__row
+                  td.project-table__cell 200
+                  td.project-table__cell 14500
+                  td.project-table__cell 14500
+                  td.project-table__cell 14500
+                  td.project-table__cell 14500
+                tr.project-table__row
+                  td.project-table__cell 195
+                  td.project-table__cell 14500
+                  td.project-table__cell 14500
+                  td.project-table__cell 14500
+                  td.project-table__cell 14500
+  .container
+    .row
+      .col-xs-12.price-list__container
+        .price-list
+          p.price-list__text
+            | Погрузка в крытые тентом машины (боковая) – 
+            span БЕСПЛАТНО
+            br.price-list__paragraph
+            |Обработка торцов для уменьшения растрескивания TEKNOS-JRM – 
+            span БЕСПЛАТНО
+            br.price-list__paragraph
+            |Упаковка бруса камерной сушки в светонепроницаемую пленку – 
+            span БЕСПЛАТНО
+            br.price-list__paragraph
+            |Изготовление внутренних стен -тоньше чем наружные – 
+            span БЕСПЛАТНО
+            br.price-list__paragraph 
+            |Разработка проекта (разбрусовка) – 
+            span 200 руб./м³
+            br.price-list__paragraph
+            |Изготовление отверстий под шпильки и скрытую проводку – 
+            span 600 руб./м³
+            br.price-list__paragraph
+            |Изготовление пазов под обсадочную коробку – 
+            span 300 руб./м³
+  .container.price-table-container
+    .row
+      .col-xs-12
+        h2.project-table__title.project-table__title--lesser-margin ОРИЕНТИРОВОЧНАЯ ТАБЛИЦА ОБЪЕМОВ ДРЕВЕСИНЫ, НЕОБХОДИМЫХ ДЛЯ СТРОИТЕЛЬСТВА*
+        .scroller-wrapper
+          .scroller
+            table.project-table
+              thead.project-table__head
+                tr.project-table__row
+                  th.project-table__cell.project-table__cell--head.project-table__cell--first Параметры
+                  th.project-table__cell.project-table__cell--head 
+                    |Толщина бруса
+                    br 
+                    span H, мм
+                  th.project-table__cell.project-table__cell--head
+                    |Рабочая высота
+                    br 
+                    span L, мм              
+                  th.project-table__cell.project-table__cell--head
+                    |Высота бруса
+                    br 
+                    span D, мм              
+                  th.project-table__cell.project-table__cell--head
+                    |Ширина утеплителя
+                    br 
+                    span D, мм
+              tbody.project-table__body
+                tr.project-table__row
+                  td.project-table__cell.project-table__cell--first Кол-во бруса длиной 6 м в 1 м³
+                  td.project-table__cell 95
+                  td.project-table__cell 95
+                  td.project-table__cell 95
+                  td.project-table__cell 95
+                tr.project-table__row
+                  td.project-table__cell.project-table__cell--first Объем 1го бруса в 6 м, м³
+                  td.project-table__cell 135
+                  td.project-table__cell 135
+                  td.project-table__cell 135
+                  td.project-table__cell 135
+                tr.project-table__row
+                  td.project-table__cell.project-table__cell--first Общая длина бруса в 1 м³,м
+                  td.project-table__cell 145
+                  td.project-table__cell 145
+                  td.project-table__cell 145
+                  td.project-table__cell 145
+                tr.project-table__row
+                  td.project-table__cell.project-table__cell--first Масса 1го бруса длиной 6м, кг
+                  td.project-table__cell 50
+                  td.project-table__cell 50
+                  td.project-table__cell 50
+                  td.project-table__cell 50
+  .container
+    .row
+      .col-xs-12.contacts
+        .contacts__block.contacts__block--address
+          span ПОЧТОВЫЙ И ФАКТИЧЕСКИЙ АДРЕС:
+          br 
+          | 610000, г. Киров, ул. Солнечная, 5, корп.А
+          br.hide-tablet  
+          a(href="mailto:se-43@mail.ru") e-mail: se-43@mail.ru
+          | , skype: stroy-element
+        .contacts__block.contacts__block--phone
+          span ТЕЛЕФОНЫ:
+          br 
+          a(href="tel:+78332454637") +7 (8332) 45-46-37
+          | - 
+          span проектный отдел
+          br 
+          a(href="tel:+79229954637") +7 (922) 995-46-37
+          | - 
+          span отдел продаж          
+        .contacts__block.contacts__block--schedule
+          span РЕЖИМ РАБОТЫ:
+          br 
+          | Понедельник-пятница 9:00-18:00
+          br 
+          | Перерыв: 13:00-14:00
+  .container
+    .row
+      .col-xs-12.costing-form__bg
+        .costing-form__container
+          h3.costing-form__heading ОТПРАВЬТЕ ЗАЯВКУ НА РАСЧЕТ СТОИМОСТИ
+          form.costing-form        
+            input.costing-form__input(type="text" placeholder="Ваше имя")
+            input.costing-form__input.costing-form__input--required(type="text" placeholder="Ваша почта" required)
+            input.costing-form__input.costing-form__input--required2(type="text" placeholder="Ваш телефон" required)
+            textarea.costing-form__textarea(placeholder="Ваш вопрос")
+            span.costing-form__footnote *Поля обязательные для заполнения
+            span.costing-form__btn-attach#costingFormFileButton Прикрепить файл
+            br.only-mobile
+            input.costing-form__file#costingFormFileInput(type="file")
+            br.only-mobile
+            input.btn-gradient.btn-gradient--costing-form(type="submit" value="Заказать звонок")
+      .col-xs-12.address-map-container
+        iframe(src="https://api-maps.yandex.ru/frame/v1/-/CZttmLNp" frameborder="0" style="position:relative;width:100%;height:400px")

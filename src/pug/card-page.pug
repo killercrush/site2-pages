@@ -1,0 +1,199 @@
+extends ./includes/simple-layout.pug
+
+mixin projectCard(id, title, vis)
+  - var style = vis ? "display: block" : "display: none";
+  .project-card(id=id style=style)
+    .row
+      .col-xs-12.col-md-6.col-md-push-6.project-card__video-container
+        .embed-responsive.embed-responsive-16by9
+          iframe(src="https://www.youtube.com/embed/jOY3gVV_KRE" frameborder="0" allowfullscreen)      
+      .col-xs-12.col-md-6.col-md-pull-6.project-card__text-container
+        h3.project-card__title= title
+        p.project-card__text Если у круглого бревна срезать четыре "горбушки", получится брус. Затем придадим двум противоположным поверхностям бруса геометрический профиль, и получим совершенно новый строительный материал.
+        p.project-card__text Профилированный брус имеет сложное сечение, в котором есть посадочная головка, утеплительные пазы, шипы, плотно прижимающие межвенцовый утеплитель.
+        p.project-card__text Профиль рассчитывается таким образом, чтобы дождевая вода не проникала между брусьями, поэтому стены оказываются защищены от возниковения очагов гниения.
+    .row
+      .col-xs-12.project-card__text-container
+        p.project-card__text.project-card__text--before-img Срубы из профилированного бруса не нуждаются в конопатке, а расход межвенцового утеплителя минимален.
+        .project-card__image-container
+          img.project-card__image(src="images/project-card-image.jpg")
+
+block content
+  +breadcrumbs("Проекты")
+  .tabs__bg
+    .container
+      .row
+        .col-xs-12.tabs__container
+          .tabs__wrapper
+            .tabs
+              span.tabs__control(data-toggle="tab1") Оцилиндрованное бревно
+              span.tabs__control.tabs__control--active(data-toggle="tab2") Профилированный брус
+              span.tabs__control(data-toggle="tab3") Клееный брус
+              span.tabs__control(data-toggle="tab4") Рубленное вручную бревно
+  .project-card__bg
+    .container
+      .row
+        .col-xs-12    
+          +projectCard("tab1", "Оцилиндрованное бревно")
+          +projectCard("tab2", "Профилированный брус", true)
+          +projectCard("tab3", "Клееный брус")
+          +projectCard("tab4", "Рубленное вручную бревно")
+  .container.project-table__container
+    .row
+      .col-xs-12
+        h2.project-table__title ПАРАМЕТРЫ ФИНСКОГО ПРОФИЛЯ БРУСА
+        .scroller-wrapper
+          .scroller
+            table.project-table
+              thead.project-table__head
+                tr.project-table__row
+                  th.project-table__cell.project-table__cell--head.project-table__cell--first Эскиз бруса
+                  th.project-table__cell.project-table__cell--head 
+                    |Толщина бруса
+                    br 
+                    span H, мм
+                  th.project-table__cell.project-table__cell--head
+                    |Рабочая высота
+                    br 
+                    span L, мм              
+                  th.project-table__cell.project-table__cell--head
+                    |Высота бруса
+                    br 
+                    span D, мм              
+                  th.project-table__cell.project-table__cell--head
+                    |Ширина утеплителя
+                    br 
+                    span D, мм
+              tbody.project-table__body
+                tr.project-table__row
+                  td.project-table__cell.project-table__cell--first.project-table__cell--w21(rowspan=4)
+                    img.project-table__img(src="images/measurements.png")
+                  td.project-table__cell 95
+                  td.project-table__cell(rowspan=4) 135
+                  td.project-table__cell(rowspan=4) 145
+                  td.project-table__cell 95
+                tr.project-table__row
+                  td.project-table__cell 135
+                  td.project-table__cell 135
+                tr.project-table__row
+                  td.project-table__cell 145
+                  td.project-table__cell 145
+                tr.project-table__row
+                  td.project-table__cell 50
+                  td.project-table__cell 50
+        h2.project-table__title ХАРАКТЕРИСТИКИ ПРОФИЛИРОВАННОГО БРУСА
+        .scroller-wrapper
+          .scroller
+            table.project-table
+              thead.project-table__head
+                tr.project-table__row
+                  th.project-table__cell.project-table__cell--head.project-table__cell--first Параметры
+                  th.project-table__cell.project-table__cell--head 
+                    |Толщина бруса
+                    br 
+                    span H, мм
+                  th.project-table__cell.project-table__cell--head
+                    |Рабочая высота
+                    br 
+                    span L, мм              
+                  th.project-table__cell.project-table__cell--head
+                    |Высота бруса
+                    br 
+                    span D, мм              
+                  th.project-table__cell.project-table__cell--head
+                    |Ширина утеплителя
+                    br 
+                    span D, мм
+              tbody.project-table__body
+                tr.project-table__row
+                  td.project-table__cell.project-table__cell--first.project-table__cell--w25 Кол-во бруса длиной 6 м в 1 м³
+                  td.project-table__cell 95
+                  td.project-table__cell 95
+                  td.project-table__cell 95
+                  td.project-table__cell 95
+                tr.project-table__row
+                  td.project-table__cell.project-table__cell--first Объем 1го бруса в 6 м, м³
+                  td.project-table__cell 135
+                  td.project-table__cell 135
+                  td.project-table__cell 135
+                  td.project-table__cell 135
+                tr.project-table__row
+                  td.project-table__cell.project-table__cell--first Общая длина бруса в 1 м³,м
+                  td.project-table__cell 145
+                  td.project-table__cell 145
+                  td.project-table__cell 145
+                  td.project-table__cell 145
+                tr.project-table__row
+                  td.project-table__cell.project-table__cell--first Масса 1го бруса длиной 6м, кг
+                  td.project-table__cell 50
+                  td.project-table__cell 50
+                  td.project-table__cell 50
+                  td.project-table__cell 50
+  .production-stages-bg
+    .container
+        .row
+          .col-xs-12.heading__container
+            h2.heading.heading--production-stages Этапы производства
+            .carousel.carousel--production-stages.owl-carousel
+              +carouselItem("images/work1.jpg")
+              +carouselItem("images/work2.jpg")
+              +carouselItem("images/work3.jpg")
+              +carouselItem("images/work4.jpg")
+              +carouselItem("images/work1.jpg")
+  .container
+    .row
+      .col-xs-12
+        .btn-gradient__container.btn-gradient__container--production-stages
+          .btn-gradient.btn-gradient--production-stages(href="#") Оставить заявку на расчет          
+    .row
+      .col-sm-6
+          .pluses
+            h3.pluses__heading 5 плюсов технологии
+            ul.pluses__list
+              li.pluses__item
+                | Экологичность
+                br
+                span Массив дерева из таежных лесов
+              li.pluses__item
+                | Экономичность
+                br
+                span Не требует тяжелого фундамента
+              li.pluses__item
+                | Теплосбережение
+                br
+                span Высокие теплозащитные свойства позволяют снизить затраты на отопление
+              li.pluses__item
+                | Естественная вентиляция
+                br
+                span Обеспечивается природными свойствами материала
+              li.pluses__item
+                | Точность изготовления
+                br
+                span Сводит к минимуму ошибки при сборке
+      .col-sm-6
+          .pluses
+            h3.pluses__heading 5 плюсов производства
+            ul.pluses__list.pluses__list--lesser-margin
+              li.pluses__item
+                | Собственная сырьевая база
+                br
+                span Массив дерева из таежных лесов
+              li.pluses__item
+                | Самая прочная древесина
+                br
+                span северных пород
+              li.pluses__item
+                | Короткие сроки
+                br
+                span Позволяет обрабатывать заказы  в самые кратчайшие сроки
+                br
+                br.pluses__extra-line
+              li.pluses__item
+                | Европейские технологии
+                br
+                span Позволяет обрабатывать заказы  в самые кратчайшие сроки
+              li.pluses__item.pluses__item--lesser-pading
+                | Контроль качества
+                br
+                span На каждом этапе производства
+

@@ -1,0 +1,81 @@
+/** 
+ * PHOTO
+ */
+.heading.heading--photos {
+    margin: 50px auto 45px;
+    &:before,
+    &:after {
+        width: 38%;
+    }
+    &:before {
+        right: 8%;
+    }
+    &:after {
+        left: 8%;
+    }
+    @include breakpoint(mobile) {
+        margin: 18px auto;
+    }        
+}
+.photos {
+    padding: 0 39px 51px;
+     @include breakpoint(tablet) {
+        padding: 0 0 51px;
+    }
+    @include breakpoint(mobile) {
+        padding: 0;
+    }    
+}
+.photo {
+    display: inline-block;
+    width: 100%;
+    border: 2px solid $green;
+    padding: 10px 6px;
+    margin-bottom: 30px;
+    @include breakpoint(mobile) {
+        margin-bottom: 10px;
+    }    
+}
+.photos .photo__img-container .photo__img {
+    max-width: 100%;
+    width: auto;
+    display: inline-block;
+}
+.photo:hover {
+    border-color: $brown;
+}
+.photo__heading {
+    font-size: 14px;
+    color: $green;
+    font-family: "Lato";
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 6px;
+}
+.photo__img-container {
+    position: relative;
+    text-align: center;
+}
+.photo__number {
+    font-size: 12px;
+    color: #ffffff;
+    font-family: "Lato";
+    font-weight: 700;
+    background-color: rgba(207, 131, 12, 0.8);
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 3px 6px 0;
+}
+.photo__text {
+    font-size: 13px;
+    color: #2f2b21;
+    font-family: "Lato";
+    font-weight: 300;
+    line-height: 20px;
+    text-shadow: 0px 0px 0.2px rgba(47, 43, 33, 1);
+    margin: 15px 0 0px;
+    padding-left: 3px;    
+}
+

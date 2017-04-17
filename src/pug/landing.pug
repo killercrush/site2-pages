@@ -1,0 +1,208 @@
+- var menuItems = ["О компании", "Проекты", "Производство", "Фото", "Цены", "Ценообразование", "Контакты"];
+- 
+  var descriptions = [
+    "Вы оставляете заявку, и мы рассчитываем ориентировочные сроки и стоимость.",
+    "Согласование проекта или его подготовка",
+    "После согласования проекта заключаем договор на поставку материала.",
+    "Производство материалов в оговоренные сроки.",
+    "Заявка транспортной компанией на перевозку изготовленного материала.",
+    "По Вашему желанию на место сборки выезжает бригада строителей."
+  ];
+mixin carouselItem(img_src)
+  .carousel-item
+    a.carousel-item__thumb-overlay(href="http://www.aviatorcameragear.com/wp-content/uploads/2012/07/placeholder_2.jpg")
+      img.carousel-item__thumb(src=img_src)
+mixin project(img_src)
+  .project
+    .project__container
+      img.project__thumb(src=img_src)
+      span.project__name Коттедж "Юбилейный"
+      br
+      span.project__area 135 м<sup>2</sup>
+      span.project__price 509200 р.
+mixin stage(title, text, img_src, isLast)
+  - 
+    if (isLast) {
+      var className = "stage stage--last";
+      var classNameCol = "col-xs-12 col-sm-4 col-lg-2 last";
+    } else {
+      var className = "stage";
+      var classNameCol = "col-xs-12 col-sm-4 col-lg-2";
+    }  
+  div(class=classNameCol)
+    div(class=className)
+      .stage__heading= title
+      .stage__thumb-container
+        img.stage__thumb(src=img_src)
+      p.stage__text= text
+mixin advantage(num, text, mod)
+  - 
+    if (mod != "") {
+      var className = "advantage advantage--" + mod;
+    } else {
+      var className = "advantage";
+    }
+  div(class=className)
+    .advantage__badge
+      .advantage__num= num
+    p.advantage__text= text
+mixin testimonial()
+  .testimonial
+    .testimonial__person-container
+      img.testimonial__person(src="images/face.jpg")
+    .testimonial__rec-container
+      h3.testimonial__name КУЧЕРБАЕВ ТИМУР
+      p.testimonial__text.testimonial__text--no-margin-mobile
+        span.testimonial__accent Рекомендует: 
+        | Заказать сухой профилированный брус в компании ПК Строй-элемент
+        br
+        span.testimonial__accent Понравилось: 
+        | Дружеский подход всех сотрудников предприятия. 
+        span.hide-mobile
+          | Качественный и не дорогой поставляемый материал. Работа точно в срок. Консультация на всех этапах строительства.
+    p.testimonial__text
+      span.testimonial__accent Отзыв: 
+      | Очень благодарны компании "ПК Строй-элемент" за отличную работу. Материал поставили качественный и в оговоренные сроки. Посоветовали хорошую бригаду для сборки. Все элементы были тщательно подогнаны. Дом получился красивый, светлый, уютный. Коллектив компании с первых дней расположил к себе доверие, все сотрудники настоящие профессионалы. Все получилось здорово!
+    img.testimonial__img(src="images/small-house.jpg")
+    img.testimonial__img(src="images/small-house.jpg")
+    img.testimonial__img(src="images/small-house.jpg")
+    a.testimonial__link-show-all Смотреть все отзывы и рекомендации
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(href="css/bootstrap-grid.css", rel="stylesheet")
+    link(href="css/owl.carousel.min.css", rel="stylesheet")
+    link(href="css/colorbox.css", rel="stylesheet")
+    link(href="css/style.css", rel="stylesheet")
+    title= "Nord House"
+  body
+    .header__bg
+      .container
+        header.row.header
+          .col-xs-12.col-sm-5.col-md-6
+            a.hamburger(href="#menu")
+            a.header__logo(href="/")
+          .col-xs-6.col-sm-3.col-md-3.header__mail-link-container
+            a.header__link.header__link--mail(href="mailto:avu43.ru@yandex.ru") avu43.ru@yandex.ru
+          .col-xs-6.col-sm-4.col-md-3.header__phone-link-container
+            a.header__link.header__link--phone(href="tel:+79191554802") +7 (919) 155 48 02
+    .menu__bg
+      .container
+        ul.menu#menu
+          each item in menuItems
+            li.menu__item
+              a.menu__link(href="#")= item
+            | &#32;
+    .banner__bg
+      .container
+        .row
+          .col-xs-12
+            .banner
+              p.banner__text
+                |  Проектирование,
+                br.hide-mobile 
+                |  производство
+                br 
+                |  и строительство 
+                br
+                |  деревянных домов
+              span.banner__text.banner__text--small опыт работы более 10 лет
+    .container
+        .row
+          .col-xs-12.heading__container
+            h2.heading Наши работы
+            .carousel.owl-carousel
+              +carouselItem("images/work1.jpg")
+              +carouselItem("images/work2.jpg")
+              +carouselItem("images/work3.jpg")
+              +carouselItem("images/work4.jpg")
+              +carouselItem("images/work1.jpg")
+    .projects__bg
+      .container.projects__container
+          .row.projects__row
+            .col-xs-12.projects__col.heading__container
+              h2.heading.heading--projects 
+                | Популярные проекты
+                br.only-mobile 
+                | домов
+              .projects.owl-carousel
+                +project("images/project.jpg")
+                +project("images/project.jpg")
+                +project("images/project.jpg")
+                +project("images/project.jpg")
+                +project("images/project.jpg")
+              hr.divider
+              .row.about__container
+                .col-xs-12.col-lg-6.about__text-container
+                  .about
+                    h3.about__heading NORD HOUSE
+                    p.about__text
+                      |Производственная компания «NORD HOUSE» — это зарекомендовавшее себя предприятие, основанное в 2001 году. Но, несмотря на сравнительно молодой возраст, компания уже завоевала доверие многих покупателей на огромной территории России и ближнего Зарубежья. 
+                      span.hide-mobile
+                        |Деревянные дома производства компании «Строй-элемент» можно увидеть в выставочных залах наших партнеров и на земельных участках счастливых покупателей от Калининграда до Камчатки, от Мурманска до Челябинска, в Казахстане, Украине, Белоруссии.
+                    a.btn-gradient(href="#") подробнее
+                .col-xs-12.col-lg-6.about__video-container
+                  .embed-responsive.embed-responsive-16by9
+                    iframe(src="https://www.youtube.com/embed/jOY3gVV_KRE" frameborder="0" allowfullscreen)
+    .container
+        .row
+          .col-xs-12.heading__container
+            h2.heading.heading--stages Этапы работы
+            .row
+              +stage("Заявка", descriptions[0] , "images/icon-stage-1.png")
+              +stage("Проект", descriptions[1], "images/icon-stage-2.png")
+              +stage("Договор", descriptions[2], "images/icon-stage-3.png")
+              .col-xs-12.only-tablet
+                .wood-line
+              +stage("Изготовление", descriptions[3], "images/icon-stage-4.png")
+              +stage("Доставка", descriptions[4], "images/icon-stage-5.png")
+              +stage("Сборка", descriptions[5], "images/icon-stage-6.png", true)
+              .col-xs-12.hide-mobile
+                .wood-line.wood-line--lesser-margin
+            .btn-gradient__container
+              .btn-gradient.btn-gradient--big(href="#") Оставить заявку на расчет
+    .advantages__bg
+      .container
+          .row
+            .col-xs-12.heading__container
+              h2.heading.heading--advantages 5 плюсов домов заводской готовности
+              +advantage("1", "Точность изготовления бревен сводит к минимуму ошибки при сборке", "l2")
+              +advantage("2", "Не требуется дополнительная отделка стен", "l1")
+              +advantage("3", "Меньше времени уходит на усадку дома", "")
+              +advantage("4", "Предельно герметичные соединения", "l1")
+              +advantage("5", "Хорошие вентиляционные и теплоизоляционные свойства", "l2")
+    .container.testimonials__container
+        .row
+          .col-xs-12.col-sm-6.map-container
+            h2.heading-no-lines География построенных деревянных домов
+            iframe#map(src="https://api-maps.yandex.ru/frame/v1/-/CZttmLNp" frameborder="0" style="position:relative;width:100%")
+          .col-xs-12.col-sm-6(style="")
+            h2.heading-no-lines Отзывы и рекомендации наших клиентов
+            .testimonials.owl-carousel
+              +testimonial()
+              +testimonial()
+              +testimonial()
+    .projects__bg
+      .container
+          .row
+            .col-xs-12
+              h2.heading-no-lines.heading-no-lines--callback 
+                | Заполните заявку и наш менеджер 
+                br 
+                | свяжется с вами
+              form.callback-form
+                .row
+                  .col-xs-12.col-sm-4
+                    input.callback-form__input(type="text" placeholder="Ваше имя" required)
+                  .col-xs-12.col-sm-4
+                    input.callback-form__input(type="text" placeholder="Ваш телефон" required)
+                  .col-xs-12.col-sm-4
+                    input.btn-gradient.btn-gradient--submit(type="submit" value="Отправить заявку")
+    .footer__bg
+      .footer © 2016, Производственная компания “Строй-Элемент”. Все права защищены.
+  script(src="js/jquery.min.js")
+  script(src="js/jquery.colorbox-min.js")
+  script(src="js/owl.carousel.min.js")
+  script(src="js/script.js")

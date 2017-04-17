@@ -1,0 +1,111 @@
+extends ./includes/simple-layout.pug
+
+mixin galleryCarouselItem(img_src)
+  .gallery-carousel__item
+    .gallery-carousel__item-thumb(style="background-image: " + img_src)
+
+block content
+  +breadcrumbs("Проекты")
+  .container
+    .row
+      .col-md-5.col-xs-12.gallery
+        h3.block-description__heading.hide-desktop Гостиница из оцилиндрованного бревна "ДО-004"
+        .gallery__img-container
+          .gallery__img-wrapper
+            img.gallery__img#galleryImage(src="images/gallery-image.jpg")
+        span.gallery__text Планировка
+        .gallery-carousel.owl-carousel
+          +galleryCarouselItem("url(../images/gallery-image.jpg)")
+          +galleryCarouselItem("url(../images/gallery-image1.jpg)")
+          +galleryCarouselItem("url(../images/gallery-image.jpg)")
+          +galleryCarouselItem("url(../images/gallery-image1.jpg)")
+          +galleryCarouselItem("url(../images/gallery-image.jpg)")
+          +galleryCarouselItem("url(../images/gallery-image1.jpg)")
+          +galleryCarouselItem("url(../images/gallery-image.jpg)")
+          +galleryCarouselItem("url(../images/gallery-image1.jpg)")
+        .btn-gradient__container.btn-gradient__container--gallery.only-desktop
+          .btn-gradient.btn-gradient--gallery(href="#") Заказать
+      .col-md-7.col-xs-12.block-description
+        h3.block-description__heading.only-desktop Гостиница из оцилиндрованного бревна "ДО-004"
+        p.block-description__text Трехэтажная деревянная гостиница из оцилиндрованного бревна гармонично впишется в природный ландшафт и будет привлекать туристов возможностью полноценно отдохнуть в дали от сутолоки и шума городских улиц.
+          br
+          | В каждом номере имеется санузел. Каждая комната номера люкс второго этажа оборудованы индивидуальными выходами на балкон.
+        .paremeters
+          span.parameters__heading Параметры дома
+          .parameters__col
+            span.parameters__name Этажей
+            span.parameters__name Санузлов
+            span.parameters__name Терасса
+            span.parameters__name Второй свет
+          .parameters__col.parameters__col--value
+            span.parameters__value 3
+            span.parameters__value 9
+            span.parameters__value
+            span.parameters__value
+          .parameters__col
+            span.parameters__name Комнат
+            span.parameters__name Котельная
+            span.parameters__name Балкон
+            span.parameters__name Гараж
+          .parameters__col
+            span.parameters__value 11
+            span.parameters__value 
+            span.parameters__value
+            span.parameters__value
+          hr.divider.divider--paremeters
+          span.parameters__heading.parameters__heading--inline Толщина стен, мм:
+          span.parameters__value.parameters__value--inline 180
+        table.parameters-table
+          thead.parameters-table__head
+            tr
+              th.parameters-table__cell Общая площадь
+              th.parameters-table__cell Объем
+              th.parameters-table__cell Цена сруба
+          tbody.parameters-table__body
+            tr
+              td.parameters-table__cell 235 м&sup2;
+              td.parameters-table__cell 99 м&sup3;
+              td.parameters-table__cell.parameters-table__accent 663300 Р.
+        table.parameters-table
+          thead.parameters-table__head
+            tr
+              th.parameters-table__cell(colspan=3) Цена сруба с пиломатериалом
+          tbody.parameters-table__body
+            tr
+              td.parameters-table__cell.parameters-table__small Комплектация
+              td.parameters-table__cell 
+                span.parameters-table__btn Раскрыть
+              td.parameters-table__cell.parameters-table__accent 843300 Р.
+        .btn-gradient__container.btn-gradient__container--gallery.hide-desktop
+          .btn-gradient.btn-gradient--gallery(href="#") Заказать
+  .projects__bg
+    .container
+        .row
+          .col-xs-12.heading__container
+            h2.heading.heading--prj-photo Фото построенных по проекту домов
+            .carousel.carousel--prj-photo.owl-carousel
+              +carouselItem("images/work1.jpg")
+              +carouselItem("images/work2.jpg")
+              +carouselItem("images/work3.jpg")
+              +carouselItem("images/work4.jpg")
+              +carouselItem("images/work1.jpg")                
+  .container
+      .row
+        .col-xs-12
+          h2.heading.heading--projects-house 
+            | Все проекты домов от 200 м&sup2;
+          .projects.projects--projects-house.owl-carousel
+            +project("images/project.jpg")
+            +project("images/project.jpg")
+            +project("images/project.jpg")
+            +project("images/project.jpg")
+  .container
+      .row
+        .col-xs-12
+          h2.heading.heading--projects-viewed
+            | Проекты, которые вы смотрели
+          .projects.projects--projects-viewed.owl-carousel
+            +project("images/project.jpg")
+            +project("images/project.jpg")
+            +project("images/project.jpg")
+            +project("images/project.jpg")            

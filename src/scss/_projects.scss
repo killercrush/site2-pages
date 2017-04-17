@@ -1,0 +1,110 @@
+/** 
+ * PROJECT TYPES
+ */
+.project-card__bg--prj-types {
+    padding-bottom: 5px;
+}
+.project__thumb {
+    max-width: 100%;
+}
+.prj-types__item {
+    text-align: center;
+    display: inline-block;
+    width: 100%;    
+}
+.prj-types .prj-types__item .prj-types__img {
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.prj-types__name {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: $green;
+    font-size: 16px;
+    font-family: "Lato";
+    font-weight: 700;
+    text-align: center;
+    min-height: 41px;
+    min-width: 150px;
+    padding-top: 9px;
+    position: relative;
+    top: -59px;   
+}
+.prj-types__item:hover .prj-types__name {
+    background-color: rgba(101, 163, 3, 0.9);
+    color: #ffffff;    
+}
+.prj-types .owl-prev {
+    background-image: url(../images/arrow-left.png);
+    width: 18px;
+    height: 27px;
+    position: absolute;
+    top: 45%;
+    left: 0px;    
+}
+.prj-types .owl-next {
+    background-image: url(../images/arrow-right.png);
+    width: 18px;
+    height: 27px;
+    position: absolute;
+    top: 45%;
+    right: 0px;
+}
+.prj-types .owl-dots {
+    display: none;
+}
+/** 
+ * ALL PROJECTS
+ */
+.heading.heading--all-projects {
+    color: $green;
+    margin: 54px auto 38px;
+    &:before,
+    &:after {
+        width: 24%;
+        border-color: $green;
+    }   
+}
+.all-projects {
+    padding: 0 39px 30px;
+    @include breakpoint(tablet) {
+        padding: 0 30px;
+    }
+    @include breakpoint(mobile) {
+       
+    }     
+}
+.all-projects__container {
+    padding-bottom: 30px;
+}
+.all-projects__link-container {
+    padding: 6px;
+    height: 240px;
+    border: 2px solid $green;
+    @include breakpoint(tablet) {
+        height: 211px;
+    }    
+}
+.all-projects__link {
+    font-size: 24px;
+    color: #ffffff;
+    font-family: "Lato";
+    font-weight: 700;
+    height: 100%;
+    width: 100%;
+    display: block;
+    background-color: #65a303;
+    text-align: center;
+    padding-top: 94px;
+    text-transform: uppercase;
+    @include breakpoint(tablet) {
+        font-size: 20px;
+        padding-top: 90px;
+    }    
+}
+.project.project--all-projects .project__name {
+    @include breakpoint(tablet) {
+        font-size: 12px;
+    }
+}

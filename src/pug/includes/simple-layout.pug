@@ -1,0 +1,57 @@
+- var menuItems = ["О компании", "Проекты", "Производство", "Фото", "Цены", "Ценообразование", "Контакты"];
+mixin carouselItem(img_src)
+  .carousel-item
+    a.carousel-item__thumb-overlay(href="http://www.aviatorcameragear.com/wp-content/uploads/2012/07/placeholder_2.jpg")
+      img.carousel-item__thumb(src=img_src)
+mixin project(img_src)
+  .project
+    .project__container
+      img.project__thumb(src=img_src)
+      span.project__name Коттедж "Юбилейный"
+      br
+      span.project__area 135 м<sup>2</sup>
+      span.project__price 509200 р.
+mixin breadcrumbs(page)
+  .breadcrumbs
+    .container
+      .row
+        .col-xs-12
+          a.breadcrumbs__link(href="/") Главная
+          span.breadcrumbs__divider &#32;/&#32;
+          span.breadcrumbs__current= page
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(href="css/bootstrap-grid.css", rel="stylesheet")
+    link(href="css/owl.carousel.min.css", rel="stylesheet")
+    link(href="css/colorbox.css", rel="stylesheet")
+    link(href="css/style.css", rel="stylesheet")
+    title= "Nord House"
+  body
+    .header__bg
+      .container
+        header.row.header
+          .col-xs-12.col-sm-5.col-md-6
+            a.hamburger(href="#menu")
+            a.header__logo(href="/")
+          .col-xs-6.col-sm-3.col-md-3.header__mail-link-container
+            a.header__link.header__link--mail(href="mailto:avu43.ru@yandex.ru") avu43.ru@yandex.ru
+          .col-xs-6.col-sm-4.col-md-3.header__phone-link-container
+            a.header__link.header__link--phone(href="tel:+79191554802") +7 (919) 155 48 02
+    .menu__bg
+      .container
+        ul.menu#menu
+          each item in menuItems
+            li.menu__item
+              a.menu__link(href="#")= item
+            | &#32;
+    block content
+    footer.footer__bg
+      .footer © 2016, Производственная компания “Строй-Элемент”. Все права защищены.
+    script(src="js/jquery.min.js")
+    script(src="js/jquery.colorbox-min.js")
+    script(src="js/owl.carousel.min.js")
+    script(src="js/iscroll.js")
+    script(src="js/script.js")

@@ -1,0 +1,29 @@
+- var menuItems = ["О компании", "Проекты", "Производство", "Фото", "Цены", "Ценообразование", "Контакты"];
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(href="css/bootstrap-grid.css", rel="stylesheet")
+    link(href="css/owl.carousel.min.css", rel="stylesheet")
+    link(href="css/colorbox.css", rel="stylesheet")
+    link(href="css/style.css", rel="stylesheet")
+    title= "Nord House"
+  body
+    .header__bg
+      .container
+        header.row.header
+          .col-xs-12.col-sm-5.col-md-6
+            a.hamburger(href="#menu")
+            a.header__logo(href="/")
+          .col-xs-6.col-sm-3.col-md-3.header__mail-link-container
+            a.header__link.header__link--mail(href="mailto:avu43.ru@yandex.ru") avu43.ru@yandex.ru
+          .col-xs-6.col-sm-4.col-md-3.header__phone-link-container
+            a.header__link.header__link--phone(href="tel:+79191554802") +7 (919) 155 48 02
+    .menu__bg
+      .container
+        ul.menu#menu
+          each item in menuItems
+            li.menu__item
+              a.menu__link(href="#")= item
+            | &#32;

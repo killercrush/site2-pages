@@ -1,0 +1,29 @@
+mixin projectCard(id, title, vis)
+  - var style = vis ? "display: block" : "display: none";
+  .container.project-card(id=id style=style)
+    .row
+      .col-xs-12.col-md-6
+        h3.project-card__title= title
+        p.project-card__text Если у круглого бревна срезать четыре "горбушки", получится брус. Затем придадим двум противоположным поверхностям бруса геометрический профиль, и получим совершенно новый строительный материал.
+        p.project-card__text Профилированный брус имеет сложное сечение, в котором есть посадочная головка, утеплительные пазы, шипы, плотно прижимающие межвенцовый утеплитель.
+        p.project-card__text Профиль рассчитывается таким образом, чтобы дождевая вода не проникала между брусьями, поэтому стены оказываются защищены от возниковения очагов гниения.
+      .col-xs-12.col-md-6
+        .embed-responsive.embed-responsive-16by9
+          iframe(src="https://www.youtube.com/embed/jOY3gVV_KRE" frameborder="0" allowfullscreen)
+    .row
+      .col-xs-12
+        p.project-card__text Срубы из профилированного бруса не нуждаются в конопатке, а расход межвенцового утеплителя минимален.
+        img.project-card__image(src="images/project-card-image.jpg")
+.container
+  .row
+    .col-md-10.col-md-offset-1.col-xs-12
+      .tabs
+        button.tabs__control(data-toggle="tab1") Оцилиндрованное бревно
+        button.tabs__control.tabs__control--active(data-toggle="tab2") Профилированный брус
+        button.tabs__control(data-toggle="tab3") Клееный брус
+        button.tabs__control(data-toggle="tab4") Рубленное вручную бревно
+.project-card__bg
+  +projectCard("tab1")
+  +projectCard("tab2", true)
+  +projectCard("tab3")
+  +projectCard("tab4")

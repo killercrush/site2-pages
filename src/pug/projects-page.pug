@@ -1,0 +1,71 @@
+extends ./includes/simple-layout.pug
+
+mixin prjType(text, src)
+  a.prj-types__item(href="#")
+    img.prj-types__img(src=src)
+    br
+    span.prj-types__name= text
+mixin prjCategory(id, vis)
+  - var style = vis ? "display: block" : "display: none";
+  .container.prj-types__container(id=id style=style)
+    .row
+      .col-xs-12
+        .prj-types.owl-carousel
+          +prjType("до 120 м²", "images/projects-image-1.png")
+          +prjType("до 120 200 м²", "images/projects-image-2.png")
+          +prjType("более 200 м²", "images/projects-image-3.png")
+          +prjType("бани и беседки", "images/projects-image-4.png")
+mixin projectWithContainer(img_src)
+  .col-md-3.col-sm-4.all-projects__container
+    .project.project--all-projects
+      .project__container
+        img.project__thumb(src=img_src)
+        span.project__name Коттедж "Юбилейный"
+        br
+        span.project__area 135 м<sup>2</sup>
+        span.project__price 509200 р.
+
+block content
+  +breadcrumbs("Проекты")
+  .tabs__bg
+    .container
+      .row
+        .col-xs-12.tabs__container
+          .tabs__wrapper
+            .tabs
+              span.tabs__control(data-toggle="tab1") Из оцилиндрованного бревна
+              span.tabs__control.tabs__control--active(data-toggle="tab2") Из профилированного брусу
+              span.tabs__control(data-toggle="tab3") Из клееного бруса
+  .project-card__bg.project-card__bg--prj-types
+    +prjCategory("tab1")
+    +prjCategory("tab2", true)
+    +prjCategory("tab3")
+  .container
+      .row
+        .col-xs-12
+          h2.heading.heading--all-projects
+            | Все проекты
+      .row
+        .col-xs-12.only-mobile            
+          .projects.owl-carousel
+            +project("images/project.jpg")
+            +project("images/project.jpg")
+            +project("images/project.jpg")
+            +project("images/project.jpg")
+            +project("images/project.jpg")            
+      .row
+        .all-projects.clearfix.hide-mobile
+          +projectWithContainer("images/project.jpg")
+          +projectWithContainer("images/project.jpg")
+          +projectWithContainer("images/project.jpg")
+          +projectWithContainer("images/project.jpg")
+          +projectWithContainer("images/project.jpg")
+          +projectWithContainer("images/project.jpg")
+          +projectWithContainer("images/project.jpg")
+          +projectWithContainer("images/project.jpg")
+          +projectWithContainer("images/project.jpg")
+          +projectWithContainer("images/project.jpg")
+          +projectWithContainer("images/project.jpg")
+          .col-md-3.col-sm-4.all-projects__container
+            .all-projects__link-container
+              a.all-projects__link(href="#") Все проекты

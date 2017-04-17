@@ -1,0 +1,34 @@
+extends ./includes/simple-layout.pug
+
+mixin photo()
+  .col-md-3.col-sm-4
+    a.photo(href="#")
+      h4.photo__heading п.Ганино Кировская область
+      .photo__img-container
+        span.photo__number 7 фото
+        img.photo__img(src="images/photo.jpg")
+      p.photo__text Строительство дома из профилированного бруса камерной сушки 195мм в п.Ганино Кировская область
+
+mixin carouselPhoto()
+  a.photo(href="#")
+    h4.photo__heading п.Ганино Кировская область
+    .photo__img-container
+      span.photo__number 7 фото
+      img.photo__img(src="images/photo.jpg")
+    p.photo__text Строительство дома из профилированного бруса камерной сушки 195мм в п.Ганино Кировская область
+
+block content
+  +breadcrumbs("Фото")
+  .container
+    .row
+      .col-xs-12.heading__container
+        h2.heading.heading--photos Фото
+    .photos
+      .row.only-mobile
+        .col-xs-12
+          .carousel.carousel--photo.owl-carousel
+            each val in [1, 2, 3, 4, 5, 6]
+              +carouselPhoto()          
+      .row.hide-mobile
+        each val in [1, 2, 3, 4, 5, 6, 7 , 8]
+          +photo()

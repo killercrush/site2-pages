@@ -1,0 +1,48 @@
+extends ./includes/simple-layout.pug
+
+block content
+  +breadcrumbs("Контакты")
+  .container
+    .row
+      .col-xs-12.contacts
+        .contacts__block.contacts__block--address
+          span ПОЧТОВЫЙ И ФАКТИЧЕСКИЙ АДРЕС:
+          br 
+          | 610000, г. Киров, ул. Солнечная, 5, корп.А
+          br.hide-tablet 
+          a(href="mailto:se-43@mail.ru") e-mail: se-43@mail.ru
+          | , skype: stroy-element
+        .contacts__block.contacts__block--phone
+          span ТЕЛЕФОНЫ:
+          br 
+          a(href="tel:+78332454637") +7 (8332) 45-46-37
+          | - 
+          span проектный отдел
+          br 
+          a(href="tel:+79229954637") +7 (922) 995-46-37
+          | - 
+          span отдел продаж          
+        .contacts__block.contacts__block--schedule
+          span РЕЖИМ РАБОТЫ:
+          br 
+          | Понедельник-пятница 9:00-18:00
+          br 
+          | Перерыв: 13:00-14:00
+  .container
+    .row
+      .col-xs-12.costing-form__bg
+        .costing-form__container
+          h3.costing-form__heading ОТПРАВЬТЕ ЗАЯВКУ НА РАСЧЕТ СТОИМОСТИ
+          form.costing-form        
+            input.costing-form__input(type="text" placeholder="Ваше имя")
+            input.costing-form__input.costing-form__input--required(type="text" placeholder="Ваша почта" required)
+            input.costing-form__input.costing-form__input--required2(type="text" placeholder="Ваш телефон" required)
+            textarea.costing-form__textarea(placeholder="Ваш вопрос")
+            span.costing-form__footnote *Поля обязательные для заполнения
+            span.costing-form__btn-attach#costingFormFileButton Прикрепить файл
+            br.only-mobile
+            input.costing-form__file#costingFormFileInput(type="file")
+            br.only-mobile
+            input.btn-gradient.btn-gradient--costing-form(type="submit" value="Заказать звонок")
+      .col-xs-12.address-map-container
+        iframe(src="https://api-maps.yandex.ru/frame/v1/-/CZttmLNp" frameborder="0" style="position:relative;width:100%;height:400px")
